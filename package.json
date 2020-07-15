@@ -1,0 +1,20 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,html,jsx}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.20.3",
+    "prettier": "^2.0.5"
+  }
+}

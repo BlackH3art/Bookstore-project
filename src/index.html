@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: #888888;
+      }
+      .asdf {
+        min-height: 100vh;
+      }
+      .error {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        top: 30px;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="asdf">
+      <div class="error">
+        <div id="root">
+          Błąd ładowania skryptów
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/react@16.8.4/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"></script>
+
+    <script src="./App.js"></script>
+  </body>
+</html>
