@@ -1,3 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
+import { Book } from './Book'
+
 const App = () => {
   return React.createElement(
     "div",
@@ -25,12 +30,6 @@ const App = () => {
   );
 };
 
-const Book = ({ title, author, date }) => {
-  return React.createElement("div", {}, [
-    React.createElement("h2", {}, title),
-    React.createElement("h3", {}, author),
-    React.createElement("h3", {}, date),
-  ]);
-};
+
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));

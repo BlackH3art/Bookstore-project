@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier \"src/**/*.{js,html}\" --write",
-    "lint": "eslint \"src/**/*.{js,html,jsx}\""
+    "lint": "eslint \"src/**/*.{js,html,jsx}\"",
+    "dev": "parcel src/index.html"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,13 @@
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-react": "^7.20.3",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "re": "^0.1.4",
+    "reac": "0.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
