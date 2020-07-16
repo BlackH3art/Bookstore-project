@@ -6,6 +6,7 @@ import { Add } from './Add';
 
 const App = () => {
   return (
+    <React.StrictMode>
     <div id="created-by-react">
       <h1>React Bookstore</h1>
       <Add />
@@ -13,6 +14,7 @@ const App = () => {
       <Book title="Dwie wieże" author="J. R. R. Tolkien" date="1954" genre="fantasy" audience="młodzież"/>
       <Book title="Komnata Tajemnic" author="J. K. Rowling" date="1998" genre="fantasy" audience="młodzież"/>
     </div>
+    </React.StrictMode>
   )
 };
 
