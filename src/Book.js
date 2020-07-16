@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Book = ({ title, author, date, genre }) => {
+export const Book = ({ title, author, date, genre, audience}) => {
 
   return (
     <div>
@@ -9,6 +9,7 @@ export const Book = ({ title, author, date, genre }) => {
       <h4>{author}</h4>
       <h4>{date}</h4>
       <h4>{genre}</h4>
+      <h4>{audience}</h4>
     </div>
   )
 };
