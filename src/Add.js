@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import useDropdown from './useDropdown';
 
 export const Add = () => {
 
-  const [author, setAuthor] = useState("")
-  const [genre, setGenre] = useState("")
-  const [audience, setAudience] = useState("")
+  const [author, setAuthor] = useState("");
+  // const [genre, setGenre] = useState("");
+  // const [audience, setAudience] = useState("");
 
 
   const genres = ["fantasy", "horror", "kryminał"];
   const audiences = ["dzieci", "młodzież", "dorośli"];
+
+  const [genre, SetGenreDropdown] = useDropdown("", "Gatunek", genres);
+  const [audience, SetAudienceDropdown] = useDropdown("", "Dla", audiences)
+
+  useEffect(() => {
+    console.log("used effect");
+  }, [genre])
 
   return (
     <div>
@@ -23,38 +32,9 @@ export const Add = () => {
           />
         </label>
         <br/>
-        <label htmlFor="genre">
-          Gatunek: 
-          <select 
-            id="genre" 
-            value={genre} 
-            onChange={e => setGenre(e.target.value)} 
-            onBlur={e => setGenre(e.target.value)}>
-              <option>Dowolny</option>
-              {
-                genres.map( genre => {
-                  return <option key={genre} value={genre}>{genre}</option>
-                })
-              }
-          </select>
-        </label>
-        <label htmlFor="audience">
-          Dla:
-          <select 
-            id="audience"
-            value={audience}
-            onChange={e => setAudience(e.target.value)}
-            onBlur={e => setGenre(e.target.value)}>
-
-              {
-                audiences.map(audience => {
-                  return <option key={audience} value={audience}>
-                    {audience}
-                  </option>
-                })
-              }
-            </select>
-        </label>
+        <SetGenreDropdown />
+        <br/>
+        <SetAudienceDropdown />
 
         <button> Dodaj </button>
       </form>
