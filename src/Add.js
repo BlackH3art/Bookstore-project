@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import useDropdown from './useDropdown';
+import {InputComponent} from './InputComponent';
 
 export const Add = ({books, setBooks}) => {
   const [title, setTitle] = useState("");
@@ -33,37 +34,10 @@ export const Add = ({books, setBooks}) => {
   return (
     <div>
       <form>
-      <label htmlFor="title">
-          Tytuł
-          <input 
-            id="title" 
-            value={title} 
-            placeholder="tytuł" 
-            onChange={e => setTitle(e.target.value)}
-          />
-        </label>
-        <br/>
-
-        <label htmlFor="author">
-          Autor
-          <input 
-            id="author" 
-            value={author} 
-            placeholder="Autor" 
-            onChange={e => setAuthor(e.target.value)}
-          />
-        </label>
-        <br/>
-
-        <label htmlFor="publicationDate">
-          Data publikacji
-          <input 
-            id="publicationDate" 
-            value={publicationDate} 
-            placeholder="data publikacji" 
-            onChange={e => setPublicationDate(e.target.value)}
-          />
-        </label>
+        <InputComponent label="Tytuł" state={title} setState={setTitle} />
+        <InputComponent label="Autor" state={author} setState={setAuthor} />
+        <InputComponent label="Data publikacji" state={publicationDate} setState={setPublicationDate} type="number"/>
+      
         <br/>
         <SetGenreDropdown />
         <br/>
