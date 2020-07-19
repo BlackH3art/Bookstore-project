@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import {Inventory} from './inventory'
 
-import { Book } from './Book';
 import { Add } from './Add';
 
 const App = () => {
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://clockworkjava.pl/books.php")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setBooks(data);
+      })
+  }, [])
+
+
   return (
     <React.StrictMode>
     <div id="created-by-react">
       <h1>React Bookstore</h1>
-      <Add />
-      <Book title="Straż! straż!" author="Terry Prachett" date="1989" genre="fantasy" audience="młodzież"/>
-      <Book title="Dwie wieże" author="J. R. R. Tolkien" date="1954" genre="fantasy" audience="młodzież"/>
-      <Book title="Komnata Tajemnic" author="J. K. Rowling" date="1998" genre="fantasy" audience="młodzież"/>
+      <Add books={books} setBooks={setBooks}/>
+      <Inventory books={books} /> 
     </div>
-    </React.StrictMode>
+    </React.StrictMode> 
   )
 };
 
