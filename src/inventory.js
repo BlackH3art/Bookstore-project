@@ -1,5 +1,6 @@
 import React from 'react';
 import {Book} from './Book';
+import {Link} from '@reach/router';
 
 export const Inventory = ({books}) => {
   const bookComponents = books.map( book => {
@@ -18,6 +19,9 @@ export const Inventory = ({books}) => {
    return (
      <>
       {books.length === 0 ? <h3>Brak książek</h3> : bookComponents}
+      <Link to="/admin">
+        Zarządaj inwentarzem
+      </Link>
      </>
    )
 }
