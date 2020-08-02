@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
 
 import useDropdown from './useDropdown';
 import {InputComponent} from './InputComponent';
+import { ADD_BOOK } from './store/reducer';
 
-export const Add = ({books, setBooks}) => {
+export const Add = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [publicationDate, setPublicationDate] = useState("");
+  const dispatch = useDispatch();
 
 
   const genres = ["fantasy", "horror", "kryminał"];
@@ -25,9 +28,14 @@ export const Add = ({books, setBooks}) => {
       genre: genre,
       audience: audience
     }
-    const newBooks = [...books, newBook];
 
-    setBooks(newBooks)
+    dispatch({
+      type: ADD_BOOK,
+      payload: newBook
+    })
+    // const newBooks = [...books, newBook];
+
+    // setBooks(newBooks)
   }
 
 
